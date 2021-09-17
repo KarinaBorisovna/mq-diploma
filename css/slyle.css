@@ -1,0 +1,1205 @@
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("/mq-diploma/fonts/OpenSans-Bold.ttf"), url("/mq-diploma/fonts/OpenSans-Bold.woff2") format("woff2"), url("/mq-diploma/fonts/OpenSans-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("/mq-diploma/fonts/OpenSans-Regular.ttf"), url("/mq-diploma/fonts/OpenSans-Regular.woff2") format("woff2"), url("/mq-diploma/fonts/OpenSans-Regular.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  position: relative;
+}
+
+.body::before {
+  display: none;
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+}
+
+.popup {
+  display: none;
+  top: 15vh;
+  position: fixed;
+  width: 390px;
+  height: 590px;
+  background-color: #ffffff;
+  z-index: 3;
+}
+
+.popup::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url("/mq-diploma/svg/form-x.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popup-title {
+  position: relative;
+  min-width: 220px;
+  max-width: 220px;
+  margin: 52px auto 40px;
+  text-align: center;
+}
+
+.popup-text {
+  display: block;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+}
+
+.popup-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: #f4f7f6;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+  background-image: url("/mq-diploma/svg/form-arrows.svg");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 17px;
+}
+
+.radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 21px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+}
+
+.radio::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("/mq-diploma/svg/form-empty-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+.popup-radio:checked + .radio::before {
+  background-image: url("/mq-diploma/svg/form-circle.svg");
+}
+
+.popup-field {
+  resize: none;
+  display: block;
+  width: 100%;
+  min-height: 130px;
+  max-height: 130px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #f4f7f6;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+}
+
+.popup-field:focus {
+  outline: none;
+}
+
+.popup-button {
+  background-color: #b59f5b;
+  height: 48px;
+  margin-top: 25px;
+  border-top: 1px solid #e6dfc8;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.popup-button-link {
+  color: #ffffff;
+  height: 48px;
+  margin-top: 25px;
+}
+
+.popup-button:hover {
+  border-top: 1px solid #b9b29b;
+}
+
+.banner {
+  background-image: url("/mq-diploma/images/banner-bg.jpg");
+  background-color: #666666;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.banner::after {
+  content: "";
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.logo {
+  width: 180px;
+  padding-top: 35px;
+}
+
+.menu-list {
+  display: flex;
+  padding-top: 45px;
+}
+
+.menu-list-item {
+  display: inline-block;
+  margin-left: 2rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  font-size: 0.81rem;
+  text-transform: uppercase;
+}
+
+.menu-list :hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.menu-list .link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.title {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 93px;
+  padding-bottom: 127px;
+  font-size: 2.8rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 4.7rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.section-title {
+  position: relative;
+  min-width: 220px;
+  max-width: 220px;
+  margin: 57px auto 40px;
+  text-align: center;
+}
+
+.line-object::before {
+  content: "";
+  background-color: #e1d9bd;
+  position: absolute;
+  width: 65px;
+  height: 3px;
+  top: 35px;
+  left: 77px;
+}
+
+.section-title-style {
+  font-size: 1.25rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #0f0d0e;
+  text-transform: uppercase;
+}
+
+.trend-container {
+  position: relative;
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.trend-card {
+  display: flex;
+  align-items: flex-end;
+  min-height: 320px;
+  width: 25%;
+  margin-right: -6px;
+  background-repeat: no-repeat;
+  background-color: #606260;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.trend-card::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.trend-card-body {
+  box-sizing: border-box;
+  min-width: 50%;
+  border: 3px solid rgba(181, 159, 91, 0.6);
+  padding: 34px;
+  margin: 15px auto;
+}
+
+.trend-card-discribtion {
+  width: 100%;
+  font-size: 1.25rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.trend-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+}
+
+.tag {
+  display: flex;
+}
+
+.tag-link {
+  color: #b59f5b;
+}
+
+.tag-list-item {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #b59f5b;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.tag-list-item:hover {
+  border-bottom: 1px solid #b59f5b;
+}
+
+.main-aside-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-news {
+  display: flex;
+  flex-direction: column;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.news-card {
+  display: flex;
+  margin-bottom: 55px;
+}
+
+.news-image {
+  max-width: 380px;
+  margin-right: 35px;
+}
+
+.news {
+  width: 365px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #0f0d0e;
+  text-transform: uppercase;
+}
+
+.news-info {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: #888888;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  margin-right: 12px;
+}
+
+.author {
+  font-size: 0.75rem;
+  color: #0f0d0e;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+}
+
+.news-content {
+  color: #0f0d0e;
+  font-size: 15px;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  margin-bottom: 0.94rem;
+}
+
+.aside-news {
+  display: flex;
+  flex-direction: column;
+  max-width: 276px;
+}
+
+.section-main-title {
+  position: relative;
+  max-width: 120px;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.section-news-link {
+  color: #0f0d0e;
+}
+
+.section-line-object::before {
+  content: "";
+  background-color: #e1d9bd;
+  position: absolute;
+  width: 65px;
+  height: 3px;
+  top: 30px;
+  left: 29px;
+}
+
+.section-news-card {
+  display: flex;
+  margin-top: 20px;
+}
+
+.section-image {
+  max-width: 70px;
+  max-height: 70px;
+  margin-right: 20px;
+}
+
+.section-date {
+  font-size: 0.75rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+}
+
+.section-news-title {
+  font-size: 0.75rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.search-form {
+  position: relative;
+  max-width: 270px;
+  margin-top: 68px;
+}
+
+.unstyle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+.search-box {
+  width: 270px;
+  height: 48px;
+  background-color: #f4f7f6;
+  padding-top: 18px;
+  padding-left: 18px;
+  padding-bottom: 18px;
+  padding-right: 66px;
+  margin-bottom: 58px;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+}
+
+.search-box:focus {
+  border-bottom: 1px solid #ebe7d7;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: #b59f5b;
+  background-image: url("/mq-diploma/svg/search.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.email-box {
+  width: 270px;
+  height: 48px;
+  background-color: #f4f7f6;
+  padding: 18px;
+  font-size: 0.82rem;
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  color: #000000;
+  margin-top: 5px;
+  margin-bottom: 18px;
+}
+
+.email-box:focus {
+  border-bottom: 1px solid #ebe7d7;
+  outline: none;
+}
+
+.email-submit-button {
+  width: 270px;
+  height: 48px;
+  background-color: #b59f5b;
+  border-top: 1px solid #e6dfc8;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 55px;
+  cursor: pointer;
+}
+
+.email-submit-button:hover {
+  border-top: 1px solid #b9b29b;
+}
+
+.section-tag-link {
+  display: block;
+  font-size: 0.75rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-transform: uppercase;
+  color: #000000;
+  border: 3px solid #eeeeee;
+  padding: 3px 13px;
+  margin-right: 7px;
+  margin-bottom: 6px;
+}
+
+.section-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.section-theme-link {
+  color: #000000;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+}
+
+.section-theme {
+  margin-top: 37px;
+}
+
+.section-theme-list-item {
+  display: block;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+.section-theme-list-item::before {
+  content: "";
+  width: 270px;
+  height: 1px;
+  background-color: #eeeeee;
+  position: absolute;
+  top: 33px;
+}
+
+.theme-number {
+  color: #b59f5b;
+  font-size: 0.75rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  vertical-align: super;
+}
+
+.section-shop {
+  margin-top: -75px;
+}
+
+.product-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-grow: 1;
+  box-sizing: border-box;
+  max-width: 340px;
+  max-height: 260px;
+  border: 3px solid rgba(181, 159, 91, 0.6);
+  padding: 38px 20px 25px;
+  margin-top: 210px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.shop-card-image {
+  position: absolute;
+  top: -185px;
+  z-index: -1;
+}
+
+.shop-card-title {
+  color: #0f0d0e;
+  font-size: 1.25rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.prodact-discriprion {
+  font-family: "Open Sans Regular", Arial, sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.375rem;
+}
+
+.prodact-discriprion-link {
+  color: #b59f5b;
+}
+
+.price-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.shop-button {
+  width: 150px;
+  height: 48px;
+  background-color: #b59f5b;
+  border-top: 1px solid #e6dfc8;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.shop-button:hover {
+  border-top: 1px solid #b9b29b;
+}
+
+.price {
+  display: block;
+}
+
+.product-price {
+  color: #0f0d0e;
+  font-size: 0.875rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  text-decoration: line-through;
+}
+
+.discount-price {
+  color: #0f0d0e;
+  font-size: 1.25rem;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: 80px;
+  background-color: #f4f7f6;
+  margin: 65px auto 70px;
+}
+
+.social-icon-list {
+  display: flex;
+}
+
+.social-icon-item {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  margin-right: 27px;
+}
+
+.social-icon-twitter {
+  background-image: url("/mq-diploma/svg/004-twitter.svg");
+}
+
+.social-icon-pinterest {
+  background-image: url("/mq-diploma/svg/001-pinterest.svg");
+}
+
+.social-icon-facebook {
+  background-image: url("/mq-diploma/svg/002-facebook-logo.svg");
+}
+
+.social-icon-instagram {
+  background-image: url("/mq-diploma/svg/005-instagram.svg");
+}
+
+.social-icon-tumblr {
+  background-image: url("/mq-diploma/svg/003-tumblr.svg");
+}
+
+.social-link {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.copyright-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.copyright-content-text {
+  display: inline-block;
+  font-family: "Open Sans Bold", Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #999999;
+}
+
+@media (min-width: 1281px) {
+  .trend-card {
+    margin-bottom: 4px;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}
+@media (max-width: 1280px) {
+  .trend-card {
+    width: 50%;
+    margin-bottom: 4px;
+    margin-right: -4px;
+  }
+
+  .footer {
+    max-width: 97.5vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .menu-button {
+    display: none;
+  }
+
+  .main-aside-container {
+    width: 92vw;
+  }
+
+  .news-card {
+    flex-wrap: wrap;
+  }
+
+  .search-form {
+    width: 270px;
+  }
+}
+@media (max-width: 767px) {
+  .popup {
+    height: 600px;
+  }
+
+  .banner {
+    background-image: url("/mq-diploma/images/banner-bg-tablet.jpg");
+  }
+
+  .logo {
+    width: 160px;
+    margin-left: 35px;
+    margin-top: 20px;
+  }
+
+  .title {
+    max-width: 636px;
+    font-size: 2.5rem;
+    line-height: 3.4rem;
+    text-align: center;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 113px;
+  }
+
+  .menu-list-item {
+    display: none;
+  }
+
+  .menu-button {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+    margin-top: 60px;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+
+  .button-menu-container {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: #ffffff;
+    top: 8px;
+  }
+
+  .button-menu-container::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    top: -8px;
+    left: 0;
+  }
+
+  .button-menu-container::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    top: 8px;
+    left: 0;
+  }
+
+  .header-title {
+    display: flex;
+  }
+
+  .section-title {
+    margin-top: 100px;
+  }
+
+  .section-title-style {
+    font-size: 1.125rem;
+  }
+
+  .trend-card {
+    min-height: 247px;
+  }
+
+  .trend-content {
+    font-size: 1.06rem;
+  }
+
+  .trend-card-body {
+    padding: 30px;
+  }
+
+  .subtitle {
+    font-size: 1.06rem;
+  }
+
+  .news-card {
+    position: relative;
+  }
+
+  .news-line-object::after {
+    display: block;
+    content: "";
+    position: absolute;
+    max-width: 390px;
+    height: 3px;
+    background-color: #eeeeee;
+    bottom: -12px;
+  }
+
+  .main-aside-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 91vw;
+  }
+
+  .product-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+  }
+
+  .shop-card {
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 330px;
+    padding-top: 50px;
+  }
+
+  .shop-card-title {
+    font-size: 1.06rem;
+  }
+
+  .shop-button {
+    width: 140px;
+  }
+}
+@media (min-width: 621px) and (max-width: 767px) {
+  .aside-news {
+    max-width: 40vw;
+    margin-left: 2vw;
+  }
+
+  .main-news {
+    max-width: 50vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .news-card {
+    flex-wrap: wrap;
+  }
+
+  .news-image {
+    max-width: 50vw;
+    margin-right: 0;
+  }
+
+  .news {
+    width: 390px;
+  }
+
+  .search-box {
+    max-width: 40vw;
+  }
+
+  .email-box {
+    max-width: 40vw;
+  }
+
+  .email-submit-button {
+    max-width: 40vw;
+  }
+}
+@media (min-width: 361px) and (max-width: 620px) {
+  .main-aside-container {
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 91vw;
+  }
+
+  .aside-news {
+    margin-left: 2vw;
+  }
+
+  .main-news {
+    max-width: 91vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .news-card {
+    flex-wrap: wrap;
+  }
+
+  .news-image {
+    max-width: 91vw;
+    margin-right: 0;
+  }
+
+  .news {
+    max-width: 91vw;
+  }
+}
+@media (max-width: 360px) {
+  .popup {
+    max-height: 545px;
+    width: 92vw;
+    top: 7.5vh;
+    left: 4vw;
+  }
+
+  .popup::before {
+    width: 25px;
+    height: 25px;
+    top: -30px;
+    background-image: url("/mq-diploma/svg/form-x.svg");
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+  }
+
+  .popup-title {
+    margin: 30px auto 45px;
+  }
+
+  .banner {
+    background-image: url("/mq-diploma/images/banner-mobile.jpg");
+    height: 100vh;
+  }
+
+  .menu-logo {
+    height: 45vh;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .logo {
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title {
+    max-width: 290px;
+    font-size: 1.62rem;
+    line-height: 2.25rem;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-button {
+    margin-top: 30px;
+    margin-right: 10px;
+  }
+
+  .section-title-style {
+    font-size: 1rem;
+  }
+
+  .trend-card {
+    min-height: 230px;
+  }
+
+  .trend-content {
+    font-size: 1rem;
+  }
+
+  .trend-card-body {
+    padding: 28px;
+  }
+
+  .trend-card {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .main-aside-container {
+    flex-wrap: wrap;
+  }
+
+  .main-news {
+    width: 92vw;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-image {
+    max-width: 92vw;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .news {
+    max-width: 330px;
+  }
+
+  .news-card {
+    position: relative;
+    max-width: 92vw;
+  }
+
+  .news-line-object::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 92vw;
+    height: 3px;
+    background-color: #eeeeee;
+    bottom: -12px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    max-width: 92vw;
+    margin-top: 8px;
+  }
+
+  .news-info {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .news-content {
+    max-width: 92vw;
+  }
+
+  .section-main-title {
+    font-size: 1rem;
+    max-width: 160px;
+  }
+
+  .aside-news {
+    max-width: 92vw;
+  }
+
+  .section-line-object::before {
+    left: 50px;
+  }
+
+  .search-form {
+    max-width: 92vw;
+  }
+
+  .search-box {
+    width: 92vw;
+    height: 45px;
+  }
+
+  .search-button {
+    width: 45px;
+    height: 45px;
+    top: 0;
+    right: 0;
+  }
+
+  .email-box {
+    width: 92vw;
+    height: 45px;
+  }
+
+  .email-submit-button {
+    width: 92vw;
+    height: 45px;
+  }
+
+  .section-tag-link {
+    padding: 3px 12px;
+  }
+
+  .section-shop {
+    margin-top: -75px;
+  }
+
+  .product-section {
+    max-width: 92vw;
+  }
+
+  .shop-card-image {
+    max-width: 77.8vw;
+    top: -68vw;
+  }
+
+  .shop-card {
+    width: 100%;
+    padding-top: 45px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 270px;
+  }
+
+  .footer {
+    max-width: 92vw;
+  }
+}
